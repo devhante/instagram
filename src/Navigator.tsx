@@ -12,5 +12,4 @@ const RootSwitch = createSwitchNavigator(
 
 const AppContainer = createAppContainer(RootSwitch);
 
-
 export default AppContainer;
