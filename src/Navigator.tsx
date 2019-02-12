@@ -1,12 +1,12 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import HomeScreen from './screens/HomeScreen';
+import MainScreen from './screens/MainScreen';
 
 const RootSwitch = createSwitchNavigator(
     {
-        Home: HomeScreen
+        Main: MainScreen
     },
     {
-        initialRouteName: 'Home'
+        initialRouteName: 'Main'
     }
 );
 

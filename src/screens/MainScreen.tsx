@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import HomeNavbar from '../components/HomeNavbar';
 import Tabbar from '../components/Tabbar';
 
-export default class HomeScreen extends Component {
+export default class MainScreen extends Component {
     public render() {
         return (
             <View style={styles.root}>
