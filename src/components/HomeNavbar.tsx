@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class HomeNavbar extends Component {
+export class HomeNavbar extends Component {
     public render() {
         return (
             <View style={styles.root}>

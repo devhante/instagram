@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 
 interface IProps {
     icon: string;
     fill: boolean;
 }
 
-export default class TabbarImage extends Component<IProps> {
+export class TabbarImage extends Component<IProps> {
     private getSource = () => {
         if (this.props.fill === true) {
             switch (this.props.icon) {
