@@ -2,6 +2,8 @@ export * from './AddScreen';
 export * from './FavorScreen';
 export * from './HomeNavbar';
 export * from './HomeScreen';
+export * from './Post';
+export * from './PostImage';
 export * from './SearchScreen';
 export * from './Tabbar';
 export * from './TabbarButton';
