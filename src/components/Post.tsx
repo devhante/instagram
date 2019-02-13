@@ -10,7 +10,7 @@ export class Post extends Component {
                     <Image
                         style={styles.profile}
                         borderRadius={15}
-                        source={require('../../assets/png/profile.png')}
+                        source={require('../../assets/images/profile.png')}
                     />
                     <Text style={styles.name}>kyung_wook_</Text>
                 </View>

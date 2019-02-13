@@ -11,28 +11,28 @@ export class TabbarImage extends Component<IProps> {
         if (this.props.fill === true) {
             switch (this.props.icon) {
                 case 'add':
-                    return require('../../assets/png/add-fill.png');
+                    return require('../../assets/icons/tabbar/add-fill.png');
                 case 'favor':
-                    return require('../../assets/png/favor-fill.png');
+                    return require('../../assets/icons/tabbar/favor-fill.png');
                 case 'home':
-                    return require('../../assets/png/home-fill.png');
+                    return require('../../assets/icons/tabbar/home-fill.png');
                 case 'search':
-                    return require('../../assets/png/search-fill.png');
+                    return require('../../assets/icons/tabbar/search-fill.png');
                 case 'user':
-                    return require('../../assets/png/user-fill.png');
+                    return require('../../assets/icons/tabbar/user-fill.png');
             }
         } else {
             switch (this.props.icon) {
                 case 'add':
-                    return require('../../assets/png/add-outline.png');
+                    return require('../../assets/icons/tabbar/add-outline.png');
                 case 'favor':
-                    return require('../../assets/png/favor-outline.png');
+                    return require('../../assets/icons/tabbar/favor-outline.png');
                 case 'home':
-                    return require('../../assets/png/home-outline.png');
+                    return require('../../assets/icons/tabbar/home-outline.png');
                 case 'search':
-                    return require('../../assets/png/search-outline.png');
+                    return require('../../assets/icons/tabbar/search-outline.png');
                 case 'user':
-                    return require('../../assets/png/user-outline.png');
+                    return require('../../assets/icons/tabbar/user-outline.png');
             }
         }
     };

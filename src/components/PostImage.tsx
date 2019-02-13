@@ -69,15 +69,15 @@ export class PostImage extends Component {
             >
                 <Image
                     style={styles.image}
-                    source={require('../../assets/png/picture1.png')}
+                    source={require('../../assets/images/picture1.png')}
                 />
                 <Image
                     style={styles.image}
-                    source={require('../../assets/png/picture1.png')}
+                    source={require('../../assets/images/picture1.png')}
                 />
                 <Image
                     style={styles.image}
-                    source={require('../../assets/png/picture1.png')}
+                    source={require('../../assets/images/picture1.png')}
                 />
             </ScrollView>
         );
