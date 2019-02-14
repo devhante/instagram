@@ -22,29 +22,39 @@ export class Post extends Component {
                 </View>
                 <PostImage />
 
-                <View style={styles.bottom}>
+                <View style={styles.bottomButtons}>
                     <TouchableOpacity>
                         <Image
-                            style={[styles.bottomIcon, styles.favorIcon]}
+                            style={[styles.bottomButton, styles.favorButton]}
                             source={require('../../assets/icons/post/favor-outline.png')}
                         />
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <Image
-                            style={styles.bottomIcon}
+                            style={styles.bottomButton}
                             source={require('../../assets/icons/post/comment.png')}
                         />
                     </TouchableOpacity>
 
-                    <View style={styles.bottomSpace} />
+                    <View style={styles.bottomButtonSpace} />
                     <TouchableOpacity>
                         <Image
-                            style={styles.bottomIcon}
+                            style={styles.bottomButton}
                             source={require('../../assets/icons/post/collection-outline.png')}
                         />
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.content}>kyung_wook_ 본문입니다.</Text>
+                <View style={styles.bottom}>
+                    <Text style={styles.content}>
+                        <Text style={styles.contentId}>kyung_wook_ </Text>
+                        <Text>본문입니다.</Text>
+                    </Text>
+                    <TouchableOpacity>
+                        <Text style={styles.commentButton}>
+                            댓글 2개 모두 보기
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
@@ -73,23 +83,33 @@ const styles = StyleSheet.create({
         height: 24,
         margin: 12
     },
-    bottom: {
+    bottomButtons: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         padding: 8
     },
-    bottomIcon: {
+    bottomButton: {
         width: 36,
         height: 36
     },
-    bottomSpace: {
+    bottomButtonSpace: {
         flex: 1
     },
-    favorIcon: {
+    favorButton: {
         marginRight: 8
     },
+    bottom: {
+        marginLeft: 12,
+        marginBottom: 16
+    },
     content: {
-        marginLeft: 14
+        marginBottom: 8
+    },
+    contentId: {
+        fontWeight: 'bold'
+    },
+    commentButton: {
+        color: '#999999'
     }
 });

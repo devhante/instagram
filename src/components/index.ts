@@ -4,6 +4,7 @@ export * from './HomeNavbar';
 export * from './HomeScreen';
 export * from './Post';
 export * from './PostImage';
+export * from './PostView';
 export * from './SearchScreen';
 export * from './Tabbar';
 export * from './TabbarButton';

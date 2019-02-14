@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { HomeNavbar } from './HomeNavbar';
-import { Post } from './Post';
+import { PostView } from './PostView';
 
 export class HomeScreen extends Component {
     public render() {
         return (
             <View style={styles.root}>
                 <HomeNavbar />
-                <Post />
+                <PostView />
             </View>
         );
     }
