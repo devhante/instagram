@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { AddButton } from './AddButton';
 import { TabbarButton } from './TabbarButton';
 
 export class Tabbar extends Component {
@@ -8,7 +9,7 @@ export class Tabbar extends Component {
             <View style={styles.root}>
                 <TabbarButton name="home" />
                 <TabbarButton name="search" />
-                <TabbarButton name="add" />
+                <AddButton />
                 <TabbarButton name="favor" />
                 <TabbarButton name="user" />
             </View>
@@ -26,12 +27,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#FAFAFA',
         borderTopWidth: 1,
         borderTopColor: 'rgba(0, 0, 0, 0.1)'
-    },
-    button: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexGrow: 1,
-        height: '100%'
     }
 });

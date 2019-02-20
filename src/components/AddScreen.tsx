@@ -1,29 +1,47 @@
+import { action, observable } from 'mobx';
+import { inject, observer } from 'mobx-react';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Modal, StyleSheet, Text } from 'react-native';
 import CameraRollPicker from 'react-native-camera-roll-picker';
+import { IStoreInjectedProps, STORE_NAME } from '../stores/rootStore';
+import { AddNavbar } from './AddNavbar';
 
-export class AddScreen extends Component {
-    private getSelectedImages = () => {
-        console.log('get');
+@inject(STORE_NAME)
+@observer
+export class AddScreen extends Component<IStoreInjectedProps> {
+    @observable private images: object[];
+
+    @action
+    private getSelectedImages = images => {
+        this.images = images;
+    };
+
+    private handleNext = () => {
+        return 0;
+    };
+
+    private handleShare = () => {
+        return 0;
     };
 
     public render() {
         return (
-            <View style={styles.root}>
+            <Modal
+                animationType="slide"
+                visible={this.props[STORE_NAME].tabStore.getAddScreen()}
+            >
+                <AddNavbar />
                 <CameraRollPicker
                     groupTypes="All"
                     maximum={10}
                     assetType="All"
                     callback={this.getSelectedImages}
+                    imagesPerRow={4}
+                    imageMargin={2}
                 />
-            </View>
+            </Modal>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    root: {
-        width: '100%',
-        height: '100%'
-    }
-});
+const styles = StyleSheet.create({});

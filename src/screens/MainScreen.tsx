@@ -22,8 +22,6 @@ export default class MainScreen extends Component<IStoreInjectedProps> {
                 return <HomeScreen />;
             case 'search':
                 return <SearchScreen />;
-            case 'add':
-                return <AddScreen />;
             case 'favor':
                 return <FavorScreen />;
             case 'user':
@@ -37,6 +35,7 @@ export default class MainScreen extends Component<IStoreInjectedProps> {
                 <View style={styles.tabbar}>
                     <Tabbar />
                 </View>
+                <AddScreen />
             </View>
         );
     }
