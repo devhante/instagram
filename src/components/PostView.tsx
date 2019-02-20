@@ -6,8 +6,6 @@ export class PostView extends Component {
     public render() {
         return (
             <ScrollView>
-                <Post />
-                <Post />
                 <View style={{ marginBottom: 120 }} />
             </ScrollView>
         );

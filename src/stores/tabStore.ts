@@ -2,8 +2,8 @@ import { action, observable } from 'mobx';
 import RootStore from './rootStore';
 
 export default class TabStore {
-    @observable private tabName: string;
     private rootStore: RootStore;
+    @observable private tabName: string;
 
     constructor(rootStore: RootStore) {
         this.rootStore = rootStore;

@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { HomeNavbar } from './HomeNavbar';
+import CameraRollPicker from 'react-native-camera-roll-picker';
 
 export class AddScreen extends Component {
+    private getSelectedImages = () => {
+        console.log('get');
+    };
+
     public render() {
         return (
             <View style={styles.root}>
-                <HomeNavbar />
-                <Text>AddScreen</Text>
+                <CameraRollPicker
+                    groupTypes="All"
+                    maximum={10}
+                    assetType="All"
+                    callback={this.getSelectedImages}
+                />
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    root: {}
+    root: {
+        width: '100%',
+        height: '100%'
+    }
 });

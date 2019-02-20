@@ -4,5 +4,6 @@ export interface IPostSerializer {
     id: number;
     writer: IUserSerializer;
     content: string;
+    date: Date;
     favor: boolean;
 }

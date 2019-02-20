@@ -5,4 +5,5 @@ export interface IReplySerializer {
     comment: ICommentSerializer;
     index: number;
     content: string;
+    date: Date;
 }
