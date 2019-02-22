@@ -1,14 +1,37 @@
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import React, { Component } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { IStoreInjectedProps, STORE_NAME } from '../stores/rootStore';
 
-interface IProps extends IStoreInjectedProps {}
-
 @inject(STORE_NAME)
-export class AddNavbar extends Component<IProps> {
+@observer
+export class AddNavbar extends Component<IStoreInjectedProps> {
     private handleCancel = () => {
+        this.props[STORE_NAME].addStore.setNext(false);
         this.props[STORE_NAME].tabStore.setAddScreen(false);
+        this.props[STORE_NAME].addStore.setContent('');
+    };
+
+    private handleNext = () => {
+        if (this.props[STORE_NAME].addStore.getNext() === false) {
+            if (this.props[STORE_NAME].addStore.getSelected()) {
+                this.props[STORE_NAME].addStore.setNext(true);
+            }
+        } else {
+            const response = this.props[STORE_NAME].postStore.addPostList(
+                'admin',
+                this.props[STORE_NAME].addStore.getContent(),
+                false
+            );
+            console.log(response);
+            this.props[STORE_NAME].addStore.setNext(false);
+            this.props[STORE_NAME].tabStore.setAddScreen(false);
+            this.props[STORE_NAME].addStore.setContent('');
+        }
+    };
+
+    private handleShare = () => {
+        return 0;
     };
 
     public render() {
@@ -21,8 +44,12 @@ export class AddNavbar extends Component<IProps> {
                 >
                     <Text style={styles.cancel}>취소</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={this.handleCancel} activeOpacity={1}>
-                    <Text style={styles.next}>다음</Text>
+                <TouchableOpacity onPress={this.handleNext} activeOpacity={1}>
+                    <Text style={styles.next}>
+                        {this.props[STORE_NAME].addStore.getNext()
+                            ? '공유'
+                            : '다음'}
+                    </Text>
                 </TouchableOpacity>
             </View>
         );

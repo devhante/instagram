@@ -7,15 +7,13 @@ export default class AxiosStore {
 
     constructor(rootStore: RootStore) {
         this.rootStore = rootStore;
+        this.instance = this.create();
     }
 
-    public create = async () => {
-        try {
-            this.rootStore.axiosStore.instance = axios.create({
-                baseURL: 'https://instagrambackend.herokuapp.com/posts/'
-            });
-        } catch (error) {
-            console.log(error);
-        }
+    public create = () => {
+        const response = axios.create({
+            baseURL: 'https://instagrambackend.herokuapp.com/posts/'
+        });
+        return response;
     };
 }

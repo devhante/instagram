@@ -9,24 +9,24 @@ export default class TabStore {
     constructor(rootStore: RootStore) {
         this.rootStore = rootStore;
         this.tabName = 'home';
-        this.addScreen = false;
+        this.addScreen = true;
     }
 
     @action
     public setTabName = (value: string) => {
-        this.tabName = value;
+        this.rootStore.tabStore.tabName = value;
     };
 
     public getTabName = () => {
-        return this.tabName;
+        return this.rootStore.tabStore.tabName;
     };
 
     @action
     public setAddScreen = (value: boolean) => {
-        this.addScreen = value;
+        this.rootStore.tabStore.addScreen = value;
     };
 
     public getAddScreen = () => {
-        return this.addScreen;
+        return this.rootStore.tabStore.addScreen;
     };
 }
